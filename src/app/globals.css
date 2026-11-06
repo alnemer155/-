@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #f8f9fa;
+  --color-card: #ffffff;
+  --color-primary: #172b4d;
+  --color-secondary: #64748b;
+  --color-accent: #315e50;
+  --color-border: #e8ebef;
+  --color-text: #17212f;
+  --background: var(--color-bg);
+  --foreground: var(--color-text);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-ibm-plex-arabic);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-ibm-plex-arabic), "IBM Plex Sans Arabic", sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-medium,
+button,
+label span {
+  font-weight: 500;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 22%, white);
+  color: var(--color-primary);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+
+  header,
+  aside,
+  nav,
+  .no-print {
+    display: none !important;
+  }
+}
